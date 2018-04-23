@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/question_view_width"
+    android:layout_height="@dimen/question_view_height">
+
+
+    <RelativeLayout
+        android:id="@+id/area"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/question_height"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/area1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/image_question_image"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iArea1"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/signArea1" />
+
+            <TextView
+                android:id="@+id/signArea1"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/iArea2"
+                android:gravity="center_vertical"
+                android:text="+"
+                android:textSize="@dimen/font_normal" />
+
+            <ImageView
+                android:id="@+id/iArea2"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/signArea2" />
+
+            <TextView
+                android:id="@+id/signArea2"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/iArea3"
+                android:gravity="center_vertical"
+                android:text="+"
+                android:textSize="@dimen/font_normal" />
+
+            <ImageView
+                android:id="@+id/iArea3"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/sign1" />
+
+            <TextView
+                android:id="@+id/sign1"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/signArea3"
+            style="@style/Light.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/image_question_image"
+            android:layout_toEndOf="@id/area1"
+            android:gravity="center_vertical"
+            android:text="999"
+            android:textSize="@dimen/font_normal" />
+
+        <LinearLayout
+            android:id="@+id/area2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/image_question_image"
+            android:layout_below="@id/area1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iArea4"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/signArea4" />
+
+            <TextView
+                android:id="@+id/signArea4"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/iArea5"
+                android:gravity="center_vertical"
+                android:text="+"
+                android:textSize="@dimen/font_normal" />
+
+            <ImageView
+                android:id="@+id/iArea5"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/signArea5" />
+
+            <TextView
+                android:id="@+id/signArea5"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/iArea6"
+                android:gravity="center_vertical"
+                android:text="+"
+                android:textSize="@dimen/font_normal" />
+
+            <ImageView
+                android:id="@+id/iArea6"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/sign2" />
+
+            <TextView
+                android:id="@+id/sign2"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/signArea6"
+            style="@style/Light.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/image_question_image"
+            android:layout_below="@+id/area1"
+            android:layout_toEndOf="@id/area2"
+            android:gravity="center_vertical"
+            android:text="999"
+            android:textSize="@dimen/font_normal" />
+
+        <LinearLayout
+            android:id="@+id/area3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/image_question_image"
+            android:layout_below="@id/area2"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/iArea9"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toStartOf="@id/signArea9"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/signArea9"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/iArea8"
+                android:gravity="center_vertical"
+                android:text="+"
+                android:textSize="@dimen/font_normal"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iArea8"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/signArea8"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/signArea8"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/iArea7"
+                android:gravity="center_vertical"
+                android:text="+"
+                android:textSize="@dimen/font_normal"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iArea7"
+                android:layout_width="@dimen/image_question_image"
+                android:layout_height="@dimen/image_question_image"
+                android:layout_toLeftOf="@id/sign3" />
+
+            <TextView
+                android:id="@+id/sign3"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/signArea7"
+            style="@style/Light.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/image_question_image"
+            android:layout_below="@+id/area2"
+            android:layout_toRightOf="@id/area3"
+            android:gravity="center_vertical"
+            android:text="999"
+            android:textSize="@dimen/font_normal" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/answer_button_area_height"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvAnswerA"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_margin="10dp"
+
+            android:text="A) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerB"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+
+            android:layout_margin="10dp"
+            android:text="B) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerC"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_below="@id/tvAnswerA"
+            android:layout_margin="10dp"
+            android:text="C) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerD"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvAnswerB"
+            android:layout_margin="10dp"
+            android:text="D) 99999"
+            android:textSize="@dimen/font_normal" />
+
+
+        <Button
+            android:id="@+id/bShowAnswer"
+            style="@style/Light.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answer_show_answer_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:text="@string/showAnswer"
+            android:textSize="@dimen/font_normal" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

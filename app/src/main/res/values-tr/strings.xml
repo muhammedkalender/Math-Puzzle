@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Eğlenceli Matematik Bulmacaları</string>
+
+    <string name="question_count">Soru : %1$d</string>
+
+    <string name="newGame">YENİ OYUN</string>
+    <string name="resume">DEVAM ET</string>
+    <string name="settings">SES EFEKTLERİNİ AÇ YADA KAPAT</string>
+    <string name="credits">EMEĞİ GEÇENLER</string>
+    <string name="showAnswer">CEVABI GÖSTER</string>
+    <string name="errorReset">Birşeyler yanlış, Lütfen uygulamayı yeniden başlat.</string>
+
+    <string name="sound_mute">SESİ KAPAT</string>
+    <string name="sound_unmute">SESİ AÇ</string>
+
+    <string name="exit_menu">Eminmisin ?</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+
+    <string name="must_wath_ad">Cevabı görebilmek için reklamı izlemelisin</string>
+
+    <string name="credits1">İçerik\nHasan KUZULU\nMuhammed KALENDER\n\n</string>
+    <string name="credits2">Tasarım &amp; Programlama\nMuhammed KALENDER\n\n</string>
+    <string name="credits3">Kütüphaneler\nGlide ( Apache 2.0 )\nAndroid Image Cropper ( Apache 2.0 )\n\n</string>
+    <string name="credits4">Sesler\nBerfot ( bertrof@hotmail.com ) [ CC BY 3.0 ]\ndster777
+        [ CC BY 3.0 ]</string>
+    <string name="credits5">\n\nGrafik Öğeleri\n Provided by <a href="https://www.Vecteezy.com" target="_blank">Vecteezy!</a>\n\n</string>
+    <string name="credits6">\\nBu uygulama Apache 2.0 lisansı altında yayınlanmıştır. Telif Hakları 2018, Turkuaz Dev © 2018</string>
+</resources>

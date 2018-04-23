@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/question_view_width"
+    android:layout_height="@dimen/question_view_height">
+
+    <TextView
+        android:id="@+id/tvComplete"
+        style="@style/Light.Text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/question_height"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="93, 99, 88, 66, 245, 856, 1524, 1986, ?"
+        android:textSize="@dimen/font_normal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/answer_button_area_height"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvAnswerA"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_margin="5dp"
+
+            android:text="A) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerB"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+
+            android:layout_margin="5dp"
+            android:text="B) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerC"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_below="@id/tvAnswerA"
+            android:layout_margin="5dp"
+            android:text="C) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerD"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvAnswerB"
+            android:layout_margin="5dp"
+            android:text="D) 99999"
+            android:textSize="@dimen/font_normal" />
+
+
+        <Button
+            android:id="@+id/bShowAnswer"
+            style="@style/Light.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answer_show_answer_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:text="@string/showAnswer"
+            android:textSize="@dimen/font_normal" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

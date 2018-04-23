@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Funny Math Puzzles</string>
+
+    <string name="question_count">Question : %1$d</string>
+
+    <string name="newGame">NEW GAME</string>
+    <string name="resume">RESUME</string>
+    <string name="settings">MUTE / UN MUTE Sound Effects</string>
+    <string name="credits">CREDITS</string>
+    <string name="showAnswer">SHOW ANSWER</string>
+    <string name="errorReset">Somethings wrong, please restart app.</string>
+
+    <string name="sound_mute">Mute Sound</string>
+    <string name="sound_unmute">Unmute Sound</string>
+
+    <string name="exit_menu">Are you sure ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="credits1">Content Builders\nHasan KUZULU\nMuhammed KALENDER\n\n</string>
+    <string name="credits2">Design &amp; Development\nMuhammed KALENDER\n\n</string>
+    <string name="credits3">Library\nGlide ( Apache 2.0 )\nAndroid Image Cropper ( Apache 2.0 )\n\n</string>
+    <string name="credits4">Sounds\nBerfot ( bertrof@hotmail.com ) [ CC BY 3.0 ]\ndster777
+        [ CC BY 3.0 ]</string>
+    <string name="credits5">\n\nGraphics\n Provided by <a href="https://www.Vecteezy.com" target="_blank">Vecteezy!</a>\n\n</string>
+    <string name="credits6">\nThis app under license Apache 2.0\nCopyright 2018, Hasan KUZULU &amp; Muhammed KALENDER</string>
+
+    <string name="must_wath_ad">You must watch ad for show answer.</string>
+
+    <string name="app_id" translatable="false">ca-app-pub-9233742828463530~8234604789</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-9233742828463530/8148465568</string>
+    <string name="rewarded_video_ad_unity_id" translatable="false">ca-app-pub-9233742828463530/8312117090</string>
+    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-9233742828463530/1286053053</string>
+</resources>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/question_view_width"
+    android:layout_height="@dimen/question_view_height">>
+
+    <LinearLayout
+        android:id="@+id/area"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/question_height"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linear_question_item_height"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tvArea1"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/tvSign1"
+                android:gravity="center_vertical"
+                android:text="98965 &amp; 99999"
+                android:textSize="@dimen/font_normal" />
+
+
+            <TextView
+                android:id="@+id/tvSign1"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:id="@+id/tvArea2"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/tvSign1"
+                android:gravity="center_vertical"
+                android:text="99999"
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linear_question_item_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvArea3"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/tvSign2"
+                android:gravity="center_vertical"
+                android:text="99999 &amp; 99999"
+                android:textSize="@dimen/font_normal" />
+
+
+            <TextView
+                android:id="@+id/tvSign2"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:id="@+id/tvArea4"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/tvSign2"
+                android:gravity="center_vertical"
+                android:text="99999"
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linear_question_item_height"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tvArea5"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/tvSign3"
+                android:gravity="center_vertical"
+                android:text=" + "
+                android:textSize="@dimen/font_normal" />
+
+
+            <TextView
+                android:id="@+id/tvSign3"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:id="@+id/tvArea6"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/tvSign3"
+                android:gravity="center_vertical"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linear_question_item_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvArea7"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/tvSign4"
+                android:gravity="center_vertical"
+                android:text=" + "
+                android:textSize="@dimen/font_normal" />
+
+
+            <TextView
+                android:id="@+id/tvSign4"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:id="@+id/tvArea8"
+                style="@style/Light.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/tvSign4"
+                android:gravity="center_vertical"
+                android:text=" = "
+                android:textSize="@dimen/font_normal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/answer_button_area_height"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvAnswerA"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_margin="10dp"
+
+            android:text="A) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerB"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+
+            android:layout_margin="10dp"
+            android:text="B) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerC"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_below="@id/tvAnswerA"
+            android:layout_margin="10dp"
+            android:text="C) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerD"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvAnswerB"
+            android:layout_margin="10dp"
+            android:text="D) 99999"
+            android:textSize="@dimen/font_normal" />
+
+
+        <Button
+            android:id="@+id/bShowAnswer"
+            style="@style/Light.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answer_show_answer_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:text="@string/showAnswer"
+            android:textSize="@dimen/font_normal" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

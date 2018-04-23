@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <RelativeLayout
+        android:id="@+id/headerView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#30000000">
+
+        <ImageView
+            android:id="@+id/headerBack"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvQuestionCount"
+            style="@style/Light.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_toEndOf="@id/headerBack"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="@dimen/font_normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mainView"
+        android:layout_width="@dimen/question_view_width"
+        android:layout_height="@dimen/question_view_height"
+        android:layout_centerInParent="true">
+
+
+        <RelativeLayout
+            android:id="@+id/viewSettings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"></RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/viewCredits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvCredits"
+                    style="@style/Light.Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center" />
+            </ScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/viewQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:visibility="invisible"></RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/viewMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bResume"
+                style="@style/Light.Button"
+                android:layout_width="@dimen/main_button_width"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_green"
+                android:text="@string/resume"
+                android:textSize="@dimen/font_normal" />
+
+            <Button
+                android:id="@+id/bNewGame"
+                style="@style/Light.Button"
+                android:layout_width="@dimen/main_button_width"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_below="@id/bResume"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_red"
+                android:text="@string/newGame"
+                android:textSize="@dimen/font_normal" />
+
+            <Button
+                android:id="@+id/bSettings"
+                style="@style/Light.Button"
+                android:layout_width="@dimen/main_button_width"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_below="@id/bNewGame"
+                android:layout_margin="10dp"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:text="@string/settings" />
+
+            <Button
+                android:id="@+id/bCredits"
+                android:layout_width="@dimen/main_button_width"
+                android:layout_height="@dimen/main_button_height"
+                android:layout_below="@id/bSettings"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_purple"
+                android:text="@string/credits"
+                android:textSize="@dimen/font_normal" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popupView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:layout_width="@dimen/question_view_width"
+            android:layout_height="@dimen/popup_height"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_blue">
+
+            <TextView
+                android:id="@+id/popupText"
+                style="Light.Text"
+                android:layout_width="@dimen/question_view_width"
+                android:layout_height="@dimen/popup_text_height"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/exit_menu"
+                android:textSize="@dimen/font_big"
+                android:textStyle="bold" />
+
+
+            <Button
+
+                android:id="@+id/popupButtonNo"
+                style="Light.Button"
+                android:layout_width="@dimen/answer_button_width"
+                android:layout_height="@dimen/popup_button_height"
+                android:layout_below="@id/popupText"
+
+
+                android:background="@drawable/button_red"
+                android:text="@string/no" />
+
+            <Button
+                android:id="@+id/popupButtonYes"
+                style="Light.Button"
+                android:layout_width="@dimen/popup_button_width"
+                android:layout_height="@dimen/popup_button_height"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/popupText"
+                android:background="@drawable/button_green"
+                android:text="@string/yes" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+</RelativeLayout>

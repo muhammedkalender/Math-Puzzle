@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "771472264489",
+    "firebase_url": "https://funny-math-puzzles.firebaseio.com",
+    "project_id": "funny-math-puzzles",
+    "storage_bucket": "funny-math-puzzles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771472264489:android:fd009e7334b0173e",
+        "android_client_info": {
+          "package_name": "com.turkuazdev.funnymathpuzzles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771472264489-kjeesplc7nk9k83h6kb9vn9mo72i1mlt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.turkuazdev.funnymathpuzzles",
+            "certificate_hash": "acd360a8636ae1dc5cfa784795ce5224bc72bd9f"
+          }
+        },
+        {
+          "client_id": "771472264489-mkjrhtqf6vr95n7tt5k55crc2u142g41.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaFCUrQii4-H5gtd793OstyDGCdRwgsSM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771472264489-mkjrhtqf6vr95n7tt5k55crc2u142g41.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

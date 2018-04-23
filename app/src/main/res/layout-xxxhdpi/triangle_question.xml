@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/question_view_width"
+    android:layout_height="@dimen/question_view_height"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/question_height">
+
+        <RelativeLayout
+            android:id="@+id/triangleView1"
+            android:layout_width="@dimen/triangle_father"
+            android:layout_height="@dimen/triangle_father"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/triangle_margin"
+            android:layout_toStartOf="@id/triangleView2">
+
+            <TextView
+                android:id="@+id/tvArea1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/triangle1"
+                android:layout_width="@dimen/triangle"
+                android:layout_height="@dimen/triangle"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/triangle" />
+
+            <TextView
+                android:id="@+id/tvArea2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvArea1"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/triangle_item_margin"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArea3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArea4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/triangleView2"
+            android:layout_width="@dimen/triangle_father"
+            android:layout_height="@dimen/triangle_father"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/triangle_margin"
+
+            >
+
+            <TextView
+                android:id="@+id/tvArea5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/triangle2"
+                android:layout_width="@dimen/triangle"
+                android:layout_height="@dimen/triangle"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/triangle" />
+
+            <TextView
+                android:id="@+id/tvArea6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvArea5"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/triangle_item_margin"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArea7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArea8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/triangleView3"
+            android:layout_width="@dimen/triangle_father"
+            android:layout_height="@dimen/triangle_father"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/triangle_margin"
+            android:layout_toEndOf="@id/triangleView2">
+
+            <TextView
+                android:id="@+id/tvArea9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/triangle10"
+                android:layout_width="@dimen/triangle"
+                android:layout_height="@dimen/triangle"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/triangle" />
+
+            <TextView
+                android:id="@+id/tvArea10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvArea9"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/triangle_item_margin"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArea11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArea12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="49"
+                android:textColor="@color/colorTextQuestion"
+                android:textSize="@dimen/triangle_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/answer_button_area_height"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvAnswerA"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_margin="10dp"
+
+            android:text="A) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerB"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+
+            android:layout_margin="10dp"
+            android:text="B) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerC"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_below="@id/tvAnswerA"
+            android:layout_margin="10dp"
+            android:text="C) 99999"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:id="@+id/tvAnswerD"
+            style="@style/Light.Answer"
+            android:layout_width="@dimen/answer_button_width"
+            android:layout_height="@dimen/answer_button_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvAnswerB"
+            android:layout_margin="10dp"
+            android:text="D) 99999"
+            android:textSize="@dimen/font_normal" />
+
+
+        <Button
+            android:id="@+id/bShowAnswer"
+            style="@style/Light.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/answer_show_answer_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:text="@string/showAnswer"
+            android:textSize="@dimen/font_normal" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_normal">14sp</dimen>
+
+    <dimen name="question_view_width">300dp</dimen>
+    <dimen name="question_view_height">300dp</dimen>
+
+    <dimen name="answer_button_width">120dp</dimen>
+    <dimen name="answer_button_height">35dp</dimen>
+    <dimen name="answer_button_area_height">150dp</dimen>
+    <dimen name="question_height">150dp</dimen>
+    <dimen name="answer_show_answer_height">35dp</dimen>
+
+    <dimen name="linear_question_item_height">40dp</dimen>
+
+
+    <dimen name="main_button_width">220dp</dimen>
+    <dimen name="main_button_height">50dp</dimen>
+
+    <dimen name="image_question_image">50dp</dimen>
+
+    <dimen name="triangle_father">100dp</dimen>
+    <dimen name="triangle_margin">10dp</dimen>
+    <dimen name="triangle_item_margin">12dp</dimen>
+    <dimen name="triangle">50dp</dimen>
+    <dimen name="triangle_text_size">22sp</dimen>
+
+
+    <dimen name="font_big">36sp</dimen>
+
+    <dimen name="popup_height">180dp</dimen>
+    <dimen name="popup_button_height">40dp</dimen>
+    <dimen name="popup_button_width">150dp</dimen>
+    <dimen name="popup_text_height">120dp</dimen>
+</resources>
