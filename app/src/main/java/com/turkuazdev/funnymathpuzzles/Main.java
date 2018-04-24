@@ -159,7 +159,7 @@ public class Main extends AppCompatActivity {
                                 Toast.makeText(Main.this, getString(R.string.must_wath_ad), Toast.LENGTH_SHORT).show();
                                 rewardedVideoAd.loadAd(getString(R.string.rewarded_video_ad_unity_id), new AdRequest.Builder().build());
                             } else {
-                                answerViews[correctIndex].callOnClick();
+                                answerViews[correctIndex].setBackground(getResources().getDrawable(R.drawable.button_purple));
                                 rewardedVideoAd.loadAd(getString(R.string.rewarded_video_ad_unity_id), new AdRequest.Builder().build());
                             }
                         } catch (Exception ex) {
