@@ -26,11 +26,11 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import java.util.Random;
 
 public class Main extends AppCompatActivity {
-
-
     SoundPool soundPool;
     Random rand;
     View.OnClickListener listenerAnswer;
+
+    RelativeLayout rlQuestionFather;
 
     boolean showedRewardedAds = false;
 
@@ -43,10 +43,11 @@ public class Main extends AppCompatActivity {
 
     boolean questionLoaded = false;
 
-    TextView[] answerView = {null, null, null, null};
+    TextView[] answerViews = {null, null, null, null};
     int lastQuestionType = 0;
     int lastQuestionId = 0;
     int DIFFICULTY_EASY = 0;
+    int correctIndex;
     int DIFFICULTY_NORMAL = 25;
     int DIFFICULTY_HARD = 45;
     int questionCount = 1;
@@ -65,6 +66,8 @@ public class Main extends AppCompatActivity {
     int SOUND_CLICK;
     int indexQueu = 0;
     boolean gotoMainMenu = false;
+
+    TextView tvShowAnswer;
 
     int[] explode(String TEXT, String REGEX) {
         try {
@@ -121,7 +124,6 @@ public class Main extends AppCompatActivity {
     }
 
     void showAds(final View VIEW) {
-
         try {
             if (rewardedVideoAd == null) {
 
@@ -132,8 +134,10 @@ public class Main extends AppCompatActivity {
 
                         try {
                             if (rewardedVideoAd.isLoaded()) {
-                                rewardedVideoAd.show();
+                                tvShowAnswer.setClickable(true);
+                                tvShowAnswer.setAlpha(1);
                             }
+
                         } catch (Exception ex) {
                             lib.err(142, ex);
                         }
@@ -146,15 +150,20 @@ public class Main extends AppCompatActivity {
 
                     @Override
                     public void onRewardedVideoStarted() {
-
                     }
 
                     @Override
                     public void onRewardedVideoAdClosed() {
-                        if (!showedRewardedAds) {
-                            Toast.makeText(Main.this, getString(R.string.must_wath_ad), Toast.LENGTH_SHORT).show();
-                        } else {
-                            VIEW.callOnClick();
+                        try {
+                            if (!showedRewardedAds) {
+                                Toast.makeText(Main.this, getString(R.string.must_wath_ad), Toast.LENGTH_SHORT).show();
+                                rewardedVideoAd.loadAd(getString(R.string.rewarded_video_ad_unity_id), new AdRequest.Builder().build());
+                            } else {
+                                answerViews[correctIndex].callOnClick();
+                                rewardedVideoAd.loadAd(getString(R.string.rewarded_video_ad_unity_id), new AdRequest.Builder().build());
+                            }
+                        } catch (Exception ex) {
+                            lib.err(439, ex);
                         }
                     }
 
@@ -169,7 +178,13 @@ public class Main extends AppCompatActivity {
 
                     @Override
                     public void onRewardedVideoAdFailedToLoad(int i) {
+                        try {
+                            tvShowAnswer.setClickable(false);
+                            tvShowAnswer.setAlpha(0.7f);
+                            rewardedVideoAd.loadAd(getString(R.string.rewarded_video_ad_unity_id), new AdRequest.Builder().build());
+                        } catch (Exception ex) {
 
+                        }
                     }
 
                     @Override
@@ -328,40 +343,45 @@ public class Main extends AppCompatActivity {
         }
     }
 
-    boolean buildAnswers(View VIEW, int[] TVID, int[] ANSWERS, int CORRECT_INDEX) {
+    boolean buildAnswers(int[] ANSWERS, int CORRECT_INDEX) {
         try {
-            for (int i = 0; i < 4; i++) {
-                String answerChar = "";
+            if (answerViews[0] == null) {
+                answerViews[0] = findViewById(R.id.tvAnswerA);
+                answerViews[0].setOnClickListener(listenerAnswer);
 
-                switch (i) {
-                    case 0:
-                        answerChar = "A) ";
-                        break;
-                    case 1:
-                        answerChar = "B) ";
-                        break;
-                    case 2:
-                        answerChar = "C) ";
-                        break;
-                    case 3:
-                        answerChar = "D) ";
-                        break;
-                }
+                answerViews[1] = findViewById(R.id.tvAnswerB);
+                answerViews[1].setOnClickListener(listenerAnswer);
 
-                TextView tv = VIEW.findViewById(TVID[i]);
+                answerViews[2] = findViewById(R.id.tvAnswerC);
+                answerViews[2].setOnClickListener(listenerAnswer);
 
-                answerView[i] = tv;
-
-                tv.setText(answerChar + ANSWERS[i]);
-                tv.setTag(i + "," + CORRECT_INDEX);
-                tv.setOnClickListener(listenerAnswer);
+                answerViews[3] = findViewById(R.id.tvAnswerD);
+                answerViews[3].setOnClickListener(listenerAnswer);
             }
+
+            answerViews[0].setText("A) " + ANSWERS[0]);
+            answerViews[0].setTag("0," + CORRECT_INDEX);
+            answerViews[0].setBackground(getResources().getDrawable(R.drawable.button_blue));
+
+            answerViews[1].setText("B) " + ANSWERS[1]);
+            answerViews[1].setTag("1," + CORRECT_INDEX);
+            answerViews[1].setBackground(getResources().getDrawable(R.drawable.button_blue));
+
+            answerViews[2].setText("C) " + ANSWERS[2]);
+            answerViews[2].setTag("2," + CORRECT_INDEX);
+            answerViews[2].setBackground(getResources().getDrawable(R.drawable.button_blue));
+
+            answerViews[3].setText("D) " + ANSWERS[3]);
+            answerViews[3].setTag("3," + CORRECT_INDEX);
+            answerViews[3].setBackground(getResources().getDrawable(R.drawable.button_blue));
+
             return true;
         } catch (Exception ex) {
             Toast.makeText(this, getResources().getString(R.string.errorReset), Toast.LENGTH_SHORT).show();
             lib.err(101, ex);
             return false;
         }
+
     }
 
     //   Bir Sayı türetiriz, bu tamamlalma çeşidini gösterir [ 0 = +, 1 = Üs, 2 = Bir ekleyip, bir çıkartma
@@ -378,7 +398,6 @@ public class Main extends AppCompatActivity {
             int answerRange;
             int correctAnswer;
             int sumPoint;
-            int correctIndex;
 
             int questionType = rand.nextInt(4);
 
@@ -521,36 +540,7 @@ public class Main extends AppCompatActivity {
 
             ((TextView) questionView.findViewById(R.id.tvComplete)).setText(question);
 
-            buildAnswers(questionView, new int[]{R.id.tvAnswerA, R.id.tvAnswerB, R.id.tvAnswerC, R.id.tvAnswerD}, answers, correctIndex);
-
-            final int correctIndex1 = correctIndex;
-            questionView.findViewById(R.id.bShowAnswer).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (!showedRewardedAds) {
-                        showAds(v);
-                        return;
-                    } else {
-                        showedRewardedAds = false;
-                        playSound(SOUND_CLICK);
-                        switch (correctIndex1) {
-                            case 0:
-                                questionView.findViewById(R.id.tvAnswerA).callOnClick();
-                                break;
-                            case 1:
-                                questionView.findViewById(R.id.tvAnswerB).callOnClick();
-                                break;
-                            case 2:
-                                questionView.findViewById(R.id.tvAnswerC).callOnClick();
-
-                                break;
-                            case 3:
-                                questionView.findViewById(R.id.tvAnswerD).callOnClick();
-                                break;
-                        }
-                    }
-                }
-            });
+            buildAnswers(answers, correctIndex);
 
             return questionView;
 
@@ -571,7 +561,6 @@ public class Main extends AppCompatActivity {
             int answer = 0;
             int answerRange;
             int correctAnswer;
-            int correctIndex;
             int firstCharAt;
             int secondCharAt;
             int questionType = rand.nextInt(8);
@@ -783,39 +772,8 @@ public class Main extends AppCompatActivity {
             ((TextView) questionView.findViewById(R.id.tvSign4)).setText(" = ");
 
 
-            buildAnswers(questionView, new int[]{
-                    R.id.tvAnswerA, R.id.tvAnswerB, R.id.tvAnswerC, R.id.tvAnswerD
-            }, answers, correctIndex);
+            buildAnswers(answers, correctIndex);
 
-
-            final int correctIndex1 = correctIndex;
-            questionView.findViewById(R.id.bShowAnswer).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (!showedRewardedAds) {
-                        showAds(v);
-                        return;
-                    } else {
-                        showedRewardedAds = false;
-                        playSound(SOUND_CLICK);
-                        switch (correctIndex1) {
-                            case 0:
-                                questionView.findViewById(R.id.tvAnswerA).callOnClick();
-                                break;
-                            case 1:
-                                questionView.findViewById(R.id.tvAnswerB).callOnClick();
-                                break;
-                            case 2:
-                                questionView.findViewById(R.id.tvAnswerC).callOnClick();
-                                break;
-                            case 3:
-                                questionView.findViewById(R.id.tvAnswerD).callOnClick();
-                                break;
-                        }
-                    }
-
-                }
-            });
 
             return questionView;
         } catch (Exception ex) {
@@ -886,7 +844,6 @@ public class Main extends AppCompatActivity {
                     1
             };
 
-            int correctIndex;
             final int correctAnswer;
             final int answerRange;
 
@@ -1006,37 +963,8 @@ public class Main extends AppCompatActivity {
             answer = alternativePoint[index3];
 
 
-            buildAnswers(questionView, new int[]{R.id.tvAnswerA, R.id.tvAnswerB, R.id.tvAnswerC, R.id.tvAnswerD}, answers, correctIndex);
+            buildAnswers(answers, correctIndex);
 
-
-            final int correctIndex1 = correctIndex;
-            questionView.findViewById(R.id.bShowAnswer).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (!showedRewardedAds) {
-                        showAds(v);
-                        return;
-                    } else {
-                        showedRewardedAds = false;
-                        playSound(SOUND_CLICK);
-                        switch (correctIndex1) {
-                            case 0:
-                                questionView.findViewById(R.id.tvAnswerA).callOnClick();
-                                break;
-                            case 1:
-                                questionView.findViewById(R.id.tvAnswerB).callOnClick();
-                                break;
-                            case 2:
-                                questionView.findViewById(R.id.tvAnswerC).callOnClick();
-                                break;
-                            case 3:
-                                questionView.findViewById(R.id.tvAnswerD).callOnClick();
-                                break;
-                        }
-                    }
-
-                }
-            });
 
             return questionView;
         } catch (Exception ex) {
@@ -1050,7 +978,6 @@ public class Main extends AppCompatActivity {
         try {
             final View questionView = View.inflate(getApplicationContext(), R.layout.sudoku_question, null);
             int[] points = new int[12];
-            int correctIndex = 0;
             int correctAnswer = 0;
             int answerRange;
             int[] answers = new int[4];
@@ -1191,41 +1118,12 @@ public class Main extends AppCompatActivity {
             }
 
 
-            buildAnswers(questionView, new int[]{R.id.tvAnswerA, R.id.tvAnswerB, R.id.tvAnswerC, R.id.tvAnswerD}, answers, correctIndex);
+            buildAnswers(answers, correctIndex);
 
-
-            final int correctIndex1 = correctIndex;
-            questionView.findViewById(R.id.bShowAnswer).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (!showedRewardedAds) {
-                        showAds(v);
-                        return;
-                    } else {
-                        showedRewardedAds = false;
-                        playSound(SOUND_CLICK);
-                        switch (correctIndex1) {
-                            case 0:
-                                questionView.findViewById(R.id.tvAnswerA).callOnClick();
-                                break;
-                            case 1:
-                                questionView.findViewById(R.id.tvAnswerB).callOnClick();
-                                break;
-                            case 2:
-                                questionView.findViewById(R.id.tvAnswerC).callOnClick();
-                                break;
-                            case 3:
-                                questionView.findViewById(R.id.tvAnswerD).callOnClick();
-                                break;
-                        }
-                    }
-
-                }
-            });
 
             return questionView;
         } catch (Exception ex) {
-            lib.err(256, ex);
+            lib.err(412, ex);
             return null;
         }
     }
@@ -1234,7 +1132,6 @@ public class Main extends AppCompatActivity {
         try {
             final View questionView = View.inflate(getApplicationContext(), R.layout.triangle_question, null);
             int[] points = new int[12];
-            int correctIndex;
             int correctAnswer;
             int answerRange;
             int[] answers = new int[4];
@@ -1373,42 +1270,8 @@ public class Main extends AppCompatActivity {
             ((TextView) questionView.findViewById(R.id.tvArea12)).setText("?");
 
 
-            buildAnswers(questionView, new int[]{
-                    R.id.tvAnswerA, R.id.tvAnswerB, R.id.tvAnswerC, R.id.tvAnswerD
-            }, answers, correctIndex);
+            buildAnswers(answers, correctIndex);
 
-
-            final int correctIndex1 = correctIndex;
-            questionView.findViewById(R.id.bShowAnswer).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (!showedRewardedAds) {
-                        showAds(v);
-                        return;
-                    } else {
-                        showedRewardedAds = false;
-                    }
-                    try {
-                        playSound(SOUND_CLICK);
-                        switch (correctIndex1) {
-                            case 0:
-                                questionView.findViewById(R.id.tvAnswerA).callOnClick();
-                                break;
-                            case 1:
-                                questionView.findViewById(R.id.tvAnswerB).callOnClick();
-                                break;
-                            case 2:
-                                questionView.findViewById(R.id.tvAnswerC).callOnClick();
-                                break;
-                            case 3:
-                                questionView.findViewById(R.id.tvAnswerD).callOnClick();
-                                break;
-                        }
-                    } catch (Exception ex) {
-                        lib.err(785, ex);
-                    }
-                }
-            });
 
             return questionView;
         } catch (Exception ex) {
@@ -1424,8 +1287,28 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rlQuestionArea = findViewById(R.id.viewQuestion);
+        rlQuestionFather = findViewById(R.id.questionFather);
 
         tvQuestionCount = findViewById(R.id.tvQuestionCount);
+        tvShowAnswer = findViewById(R.id.bShowAnswer);
+        tvShowAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    if (rewardedVideoAd.isLoaded()) {
+                        rewardedVideoAd.show();
+                    } else {
+                        tvShowAnswer.setAlpha(0.7f);
+                        tvShowAnswer.setClickable(false);
+                    }
+                } catch (Exception ex) {
+                    lib.err(753, ex);
+                }
+            }
+        });
+        tvShowAnswer.setClickable(false);
+        tvShowAnswer.setAlpha(0.7f);
+        showAds(null);
 
         lib.context = getApplicationContext();
 
@@ -1473,7 +1356,7 @@ public class Main extends AppCompatActivity {
                     findViewById(R.id.viewMenu).setVisibility(View.INVISIBLE);
                     //tvQuestionCount.setVisibility(View.VISIBLE);
                     tvQuestionCount.setText(getResources().getString(R.string.app_name));
-                    rlQuestionArea.setVisibility(View.VISIBLE);
+                    rlQuestionFather.setVisibility(View.VISIBLE);
                     loadQuestion();
                 } catch (Exception ex) {
                     lib.err(148, ex);
@@ -1497,7 +1380,7 @@ public class Main extends AppCompatActivity {
 
                     findViewById(R.id.viewMenu).setVisibility(View.INVISIBLE);
                     //   tvQuestionCount.setVisibility(View.VISIBLE);
-                    rlQuestionArea.setVisibility(View.VISIBLE);
+                    rlQuestionFather.setVisibility(View.VISIBLE);
                     resume = true;
                     loadQuestion();
                     resume = false;
@@ -1521,7 +1404,7 @@ public class Main extends AppCompatActivity {
 
                     ((TextView) findViewById(R.id.tvCredits)).setText(credits);
 
-                    rlQuestionArea.setVisibility(View.INVISIBLE);
+                    rlQuestionFather.setVisibility(View.INVISIBLE);
                     findViewById(R.id.viewMenu).setVisibility(View.INVISIBLE);
                     findViewById(R.id.viewSettings).setVisibility(View.INVISIBLE);
                     findViewById(R.id.viewCredits).setVisibility(View.VISIBLE);
@@ -1530,6 +1413,8 @@ public class Main extends AppCompatActivity {
                 }
             }
         });
+
+        answerViews = new TextView[4];
 
         listenerAnswer = new View.OnClickListener() {
             @Override
@@ -1543,13 +1428,14 @@ public class Main extends AppCompatActivity {
 
                     String tag[] = v.getTag().toString().split(",");
 
-                    answerView[Integer.parseInt(tag[1])].setBackground(getResources().getDrawable(R.drawable.button_green));
+
+                    answerViews[Integer.parseInt(tag[1])].setBackground(getResources().getDrawable(R.drawable.button_green));
 
                     if (tag[0].equals(tag[1])) {
                         questionCount++;
                         playSound(SOUND_ANSWER_CORRECT);
                     } else {
-                        answerView[Integer.parseInt(tag[0])].setBackground(getResources().getDrawable(R.drawable.button_red));
+                        answerViews[Integer.parseInt(tag[0])].setBackground(getResources().getDrawable(R.drawable.button_red));
                         questionCount = 1;
                         playSound(SOUND_ANSWER_WRONG);
                     }
@@ -1638,7 +1524,7 @@ public class Main extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            if (rlQuestionArea.getVisibility() == View.VISIBLE) {
+            if (rlQuestionFather.getVisibility() == View.VISIBLE) {
 
 
                 if (!gotoMainMenu) {
@@ -1646,7 +1532,7 @@ public class Main extends AppCompatActivity {
                     return;
                 }
 
-                rlQuestionArea.setVisibility(View.INVISIBLE);
+                rlQuestionFather.setVisibility(View.INVISIBLE);
                 //  tvQuestionCount.setVisibility(View.INVISIBLE);
                 tvQuestionCount.setText(getResources().getString(R.string.app_name));
 

@@ -28,7 +28,13 @@
     <string name="must_wath_ad">You must watch ad for show answer.</string>
 
     <string name="app_id" translatable="false">ca-app-pub-9233742828463530~8234604789</string>
-    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-9233742828463530/8148465568</string>
+
+
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="rewarded_video_ad_unity_id" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+
+    <!-- <string name="banner_ad_unit_id" translatable="false">ca-app-pub-9233742828463530/8148465568</string>
     <string name="rewarded_video_ad_unity_id" translatable="false">ca-app-pub-9233742828463530/8312117090</string>
-    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-9233742828463530/1286053053</string>
+    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-9233742828463530/1286053053</string> -->
 </resources>
